@@ -1,8 +1,8 @@
 AM_CPPFLAGS = @gio_CFLAGS@ -I$(top_builddir)/lib -I$(top_srcdir)/lib
 
-noinst_PROGRAMS=demo
+libexec_PROGRAMS=ncldemo
 
-demo_SOURCES = \
+ncldemo_SOURCES = \
 	$(srcdir)/demo.c
 
-demo_LDADD = @gio_LIBS@ -L$(top_builddir)/lib -lneardal -lpthread
+ncldemo_LDADD = @gio_LIBS@ -L$(top_builddir)/lib -lneardal -lpthread
