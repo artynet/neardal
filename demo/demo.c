@@ -227,7 +227,6 @@ void cb_record_found (const char *rcdName, void *user_data)
 	if (ec == NEARDAL_SUCCESS)
 	{
 		dump_record(record);
-		open_uri(record);
 		neardal_free_record(record);
 		printf("---- Reading done\n");
 		printf("---- Waiting for tag removal\n");
@@ -309,6 +308,8 @@ static gboolean wait_lost (gpointer data)
 			keystroke_state=1;//
 			return TRUE;
 		}
+		//shikha patch to call neardal_destroy
+		neardal_destroy();
 		g_main_loop_quit( (GMainLoop*)data );
 		return FALSE;
 	}
