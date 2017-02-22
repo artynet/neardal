@@ -1,0 +1,4 @@
+etc/dbus-1/system.d/org.neardal.conf
+usr/libexec/ncl
+usr/libexec/ncldemo
+usr/lib/libneardal*
