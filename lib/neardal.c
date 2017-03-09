@@ -961,7 +961,7 @@ errorCode_t neardal_get_records(char *tag, char ***array, int *len)
 
 	for (*len = i = 0; i < data_len; i++) {
 		char *name = neardal_g_variant_get(data[i], "Name", "&s");
-		if (g_str_has_prefix(name, prefix) == FALSE)
+		if ((name == NULL) || (g_str_has_prefix(name, prefix) == FALSE))
 			continue;
 		*array = (char **) neardal_arrayv_append((void **) *array,
 								g_strdup(name));
@@ -1031,8 +1031,8 @@ errorCode_t neardal_agent_set_NDEF_cb(char *tagType
 			len--;
 		}
 	}
-	agent.objPath = g_strdup_printf("%s/%s/%d", 
-					AGENT_PREFIX, 
+	agent.objPath = g_strdup_printf("%s/%s/%d",
+					AGENT_PREFIX,
 					agent.tagType,
 					agent.pid);
 	if (agent.objPath == NULL)
