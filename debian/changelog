@@ -1,3 +1,9 @@
+neardal (0.14-2) unstable; urgency=medium
+
+  * Work around to resolve the segmentation error with get_records of ncl
+
+ -- Arturo Rinaldi <arturo@arduino.org>  Wed, 08 Mar 2017 16:25:01 +0200
+
 neardal (0.14-1) unstable; urgency=low
 
   * New upstream release. Update to 0.14.

@@ -7,11 +7,11 @@ Vcs-Git: https://github.com/connectivity/neardal
 Standards-Version: 3.9.4
 Build-Depends: debhelper (>= 9), libglib2.0-dev (>= 2.28),
 	       libdbus-1-dev (>= 1.4), libnl-3-dev (>= 3.2),
-	       libnl-genl-3-dev (>= 3.2), python, pkg-config
+	       libnl-genl-3-dev (>= 3.2), python, pkg-config, ,dh-python, libreadline-dev
 
 Package: neardal
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, dbus, kmod, neard
+Depends: ${shlibs:Depends}, ${misc:Depends}, dbus, kmod, neard, libreadline7 | libreadline6 | libreadline5
 Recommends: bluez
 Description: Provides a simple C APIs to exchange datas with our NFC daemon (Neard) present on the system.
 
@@ -19,7 +19,7 @@ Package: neardal-dev
 Section: devel
 Architecture: any
 Depends: ${misc:Depends}, libglib2.0-dev (>= 2.28), libdbus-1-dev (>= 1.4),
-	 libnl-3-dev (>= 3.2), libnl-genl-3-dev (>= 3.2), neard
+	 libnl-3-dev (>= 3.2), libnl-genl-3-dev (>= 3.2), neard, libreadline7 | libreadline6 | libreadline5
 Suggests: neardal
 Description: neardal development files
  This package contains header files, pkgconfig support and D-Bus API
